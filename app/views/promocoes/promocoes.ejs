@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <link rel="stylesheet" type="text/css" href="/design.css"/>
+        <form action="/promocoes" method="post">
+            <div>
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Informe o titulo do Livro" value="<%=produto.titulo%>" />
+            </div>
+            <div>
+                <label for="descricao">Descrição</label>
+                <textarea cols="20" rows="10" id="descricao" name="descricao" placeholder="Fale sobre o livro"><%=produto.descricao%></textarea>
+            </div>
+
+            <input type="submit" value="Gravar"/>
+        </form>
+    </body>
+</html>

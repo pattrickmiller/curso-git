@@ -1,6 +1,17 @@
 var app = require("./config/express")();
-//var rotasProdutos = require("./app/routes/produtos")(app);
 
-app.listen(3000,function(){
-	console.log("servidor rodando!");
-})
+var httpServer = require("http").Server(app);;
+
+var io = require("socket.io")(httpServer);
+
+app.set('io',io);
+
+var porta = process.env.PORT || 3000;
+var server = httpServer.listen(porta, function () {
+
+    var host = server.address().address;
+    var port = server.address().port;
+
+    console.log('Example app listening at http://%s:%s', host, port);
+
+});
