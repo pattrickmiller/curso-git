@@ -8,12 +8,14 @@ module.exports = function(app){
 		produtosDAO.lista(function(err, results){
 
 			if(err){
+				console.log(err);
 				return next(err);
 			}
 
 			res.format({
 
 				html: function(){
+					console.log(results);
 					res.render('home/index', {livros: results});
 				}
 
