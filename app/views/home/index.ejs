@@ -94,24 +94,40 @@
 <!-- inicio da listagem em si-->
 <section id="index-section" class="container middle" ng-controller="HomeController">
 
-<table>
-            <tr>
-                <td>id</td>
-                <td>titulo</td>
-                <td>descricao</td>
-                <td>preco</td>
-            </td>
-            <tr>
-                <% for(var i=0; i<livros.length; i++){ %>
-                    <tr>
-                        <td><%=livros[i].id%></td>
-                        <td><%=livros[i].titulo%></td>
-                        <td><%=livros[i].descricao%></td>
-                        <td><%=livros[i].preco%></td>
-                    </tr>
-                <%}%>
-            </tr>
-        </table>
+<ul id="home-highlight-collection">
+        <%for(i=0; i<3; i++) {%>
+        <li class="col-left">
+            <a href="linkDetalhe" class="block clearfix">
+                <img width="170" height="240" src="/images/nodejs-featured_large.png" alt="<%=livros[i].titulo%>" title="<%=livros[i].titulo%>"/>
+
+                <h2 class="product-title"><%=livros[i].titulo%></h2>
+                <small class="buy-button">Lan&#231;amento!</small>
+            </a>
+        </li>
+        <%}%>
+    </ul>
+
+
+    <h1 class="cdc-call">Últimos dias com os preços promocionais.
+        Aproveite!</h1>
+
+    <ul class="clearfix book-collection">
+        <%for(i=0; i<livros.length; i++) {%>
+            <li>
+                <a href="linkDetalhe" class="block clearfix">
+                    <h2 class="product-title"><%=livros[i].titulo%></h2>
+                    <img width="143"
+                         height="202"
+                         src="/images/nodejs-featured_large.png"
+                         alt="<%=livros[i].titulo%>"
+                         title="<%=livros[i].titulo%>"/>
+
+                    <small class="buy-button">Compre</small>
+                </a>
+            </li>
+        <%}%>
+
+    </ul>
 
     <h2 class="cdc-call">Diferenciais da Casa do Código</h2>
 
